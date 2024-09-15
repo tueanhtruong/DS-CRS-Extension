@@ -27,6 +27,9 @@ importers:
       '@types/chrome':
         specifier: ^0.0.270
         version: 0.0.270
+      '@types/eslint-plugin-jsx-a11y':
+        specifier: ^6.9.0
+        version: 6.9.0
       '@types/eslint__eslintrc':
         specifier: ^2.1.2
         version: 2.1.2
@@ -1205,6 +1208,9 @@ packages:
 
   '@types/chrome@0.0.270':
     resolution: {integrity: sha512-ADvkowV7YnJfycZZxL2brluZ6STGW+9oKG37B422UePf2PCXuFA/XdERI0T18wtuWPx0tmFeZqq6MOXVk1IC+Q==}
+
+  '@types/eslint-plugin-jsx-a11y@6.9.0':
+    resolution: {integrity: sha512-5nw0sPyYGCsFibwjOXftxends8Nrh/JLgDtBWj6aJVcN14kHwy1yIy0o1MGLKfCcR27pvUFGgYG+hX2HSX16uA==}
 
   '@types/eslint@9.6.1':
     resolution: {integrity: sha512-FXx2pKgId/WyYo2jXw63kk7/+TY7u7AziEJxJAnSFzHlqTAS3Ync6SvgYAN/k4/PQpnnVuzoMuVnByKK2qp0ag==}
@@ -4809,6 +4815,10 @@ snapshots:
     dependencies:
       '@types/filesystem': 0.0.36
       '@types/har-format': 1.2.15
+
+  '@types/eslint-plugin-jsx-a11y@6.9.0':
+    dependencies:
+      '@types/eslint': 9.6.1
 
   '@types/eslint@9.6.1':
     dependencies:
