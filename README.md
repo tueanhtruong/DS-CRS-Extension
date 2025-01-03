@@ -43,6 +43,9 @@
 - [Install dependency](#install-dependency)
     - [For root](#install-dependency-for-root)
     - [For module](#install-dependency-for-module)
+- [Environment variables](#env-variables)
+  - [Add new](#env-variables-new)
+  - [Set via CLI](#env-variables-cli-set)
 - [Community](#community)
 - [Reference](#reference)
 - [Star History](#star-history)
@@ -123,20 +126,15 @@ Then, depending on the target browser:
 
 To add an environment variable:
 
-1. Copy `.example.env` to `.env` (in the same directory)
-2. Add a new record inside `.env`, prefixed with `VITE_`, e.g. `VITE_MY_API_KEY=...`
-3. Edit `./vite-env.d.ts` and in the `ImportMetaEnv` interface, add your variable with the appropriate type, e.g.
+### Add new: <a name="env-variables-new"></a>
+  1. Add a new record inside `.env`(If not exists, run `pnpm i`) (MUST HAVE `CEB_` PREFIX) or if you want dynamic, then via [CLI](#env-variables-cli-set)
+  2. Now you're able to access it via `process.env.YOUR_KEY`
 
-   `readonly VITE_MY_API_KEY: string;`
-4. Then you can read the variable via `import.meta.env.VITE_MY_API_KEY` (learn more at [Env Variables and Modes](https://vite.dev/guide/env-and-mode))
+### Set via CLI: <a name="env-variables-cli-set"></a> 
+  1. Add it as argument like: `pnpm set-global-env CLI_CEB_NEXT_VALUE=new_data ...` (MUST HAVE `CLI_CEB` PREFIX)
 
-#### If you want to set it for each package independently:
-
-1. Create `.env` inside that package
-2. Open related `vite.config.mts` and add `envDir: '.'` at the end of this config
-3. Rest steps like above
-
-#### Remember you can't use global and local at the same time for the same package(It will be overwritten)
+#### `CLI_CEB_DEV` and `CLI_CEB_FIREFOX` have default `false` value
+#### All CLI values are overwriting for each call, that's mean you'll have access to currently defined values
 
 ## Boilerplate structure <a name="structure"></a>
 
