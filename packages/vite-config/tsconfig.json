@@ -4,5 +4,5 @@
     "baseUrl": ".",
     "outDir": "dist"
   },
-  "include": ["lib", "index.mts", "rollup.config.ts"]
+  "include": ["lib", "index.mts"]
 }
