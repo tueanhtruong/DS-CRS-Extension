@@ -50,6 +50,10 @@ const manifest = withSidePanel({
     default_popup: 'popup/index.html',
     default_icon: 'icon-34.png',
   },
+  oauth2: {
+    client_id: import.meta.env ? import.meta.env.VITE_CLIENT_ID : process.env.VITE_CLIENT_ID,
+    scopes: ['https://www.googleapis.com/auth/userinfo.email'],
+  },
   // chrome_url_overrides: {
   //   newtab: 'new-tab/index.html',
   // },

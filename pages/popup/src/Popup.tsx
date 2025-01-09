@@ -1,6 +1,7 @@
 import '@src/Popup.css';
-import { useStorage, withErrorBoundary, withSuspense } from '@extension/shared';
-import { exampleThemeStorage } from '@extension/storage';
+import { withErrorBoundary, withSuspense } from '@extension/shared';
+// import { exampleThemeStorage } from '@extension/storage';
+import React from 'react';
 // import type { ComponentPropsWithoutRef } from 'react';
 
 // const notificationOptions = {
@@ -9,10 +10,14 @@ import { exampleThemeStorage } from '@extension/storage';
 //   title: 'Injecting content script error',
 //   message: 'You cannot inject script here!',
 // } as const;
-
+type UserInfo = {
+  email: string;
+  id: string;
+};
 const Popup = () => {
-  const theme = useStorage(exampleThemeStorage);
-  const isLight = theme === 'light';
+  const [user, setUser] = React.useState<UserInfo>();
+  // const theme = useStorage(exampleThemeStorage);
+  const isLight = true;
   // const logo = isLight ? 'popup/logo_vertical.svg' : 'popup/logo_vertical_dark.svg';
   // const goGithubSite = () =>
   //   chrome.tabs.create({ url: 'https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite' });
@@ -37,8 +42,28 @@ const Popup = () => {
   //     });
   // };
 
+  React.useEffect(() => {
+    chrome.identity.getAuthToken({ interactive: true }, token => {
+      if (chrome.runtime.lastError) {
+        console.error('Error getting token:', chrome.runtime.lastError.message);
+        return;
+      }
+
+      // Use the token to fetch user info
+      fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+        .then(response => response.json())
+        .then(userInfo => {
+          setUser(userInfo);
+        })
+        .catch(error => console.error('Error fetching user info:', error));
+    });
+  }, []);
+
   return (
     <div className={`App ${isLight ? 'bg-slate-50' : 'bg-gray-800'}`}>
+      {user ? `Hello: ${user.email}` : undefined}
       {/* <header className={`App-header ${isLight ? 'text-gray-900' : 'text-gray-100'}`}>
         <button onClick={goGithubSite}>
           <img src={chrome.runtime.getURL(logo)} className="App-logo" alt="logo" />
