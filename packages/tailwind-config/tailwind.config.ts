@@ -3,7 +3,7 @@ import type { Config } from 'tailwindcss/types/config';
 export default {
   theme: {
     extend: {
-      colors: {
+      extend: {
         black: '#000000',
         blue: {
           100: '#EAF2FD',
@@ -40,6 +40,7 @@ export default {
           800: '#43474C',
           900: '#333333',
           1000: '#2C2D2E',
+          DEFAULT: '#8B939E',
         },
         orange: {
           100: '#FEF4E6',
@@ -77,6 +78,20 @@ export default {
           800: '#402562',
           900: '#341D53',
           1000: '#291544',
+          DEFAULT: '#683D99',
+        },
+        secondary: {
+          100: '#E2F2F1',
+          200: '#B3E3E1',
+          300: '#85D3D1',
+          400: '#5AA7AD',
+          500: '#2F728C',
+          600: '#024D71',
+          700: '#024463',
+          800: '#033B55',
+          900: '#033246',
+          1000: '#032938',
+          DEFAULT: '#2F728C',
         },
         red: {
           100: '#FDF2F2',
@@ -90,7 +105,6 @@ export default {
           900: '#6B1212',
           1000: '#4D0D0D',
         },
-
         royal: {
           100: '#EDD6E9',
           200: '#D3ADCC',
@@ -103,18 +117,7 @@ export default {
           900: '#44193C',
           1000: '#33122E',
         },
-        secondary: {
-          100: '#E2F2F1',
-          200: '#B3E3E1',
-          300: '#85D3D1',
-          400: '#5AA7AD',
-          500: '#2F728C',
-          600: '#024D71',
-          700: '#024463',
-          800: '#033B55',
-          900: '#033246',
-          1000: '#032938',
-        },
+
         transparent: 'transparent',
         white: '#ffffff',
       },
