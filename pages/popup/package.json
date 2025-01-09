@@ -24,7 +24,9 @@
     "@extension/content-runtime-script": "workspace:*",
     "@extension/shared": "workspace:*",
     "@extension/storage": "workspace:*",
-    "@mui/material": "^6.3.1"
+    "@mui/material": "^6.3.1",
+    "axios": "^1.7.9",
+    "react-router": "^7.1.1"
   },
   "devDependencies": {
     "@extension/tailwindcss-config": "workspace:*",
