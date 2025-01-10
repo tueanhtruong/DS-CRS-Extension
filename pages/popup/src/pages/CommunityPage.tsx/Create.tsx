@@ -175,7 +175,8 @@ function Create() {
           fullWidth
           onClick={() => {
             navigate('/popup/index.html/result');
-          }}>
+          }}
+          sx={{ mb: 2 }}>
           Send
         </Button>
       </form>

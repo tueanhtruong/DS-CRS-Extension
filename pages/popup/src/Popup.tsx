@@ -25,7 +25,7 @@ const Popup = () => {
               <Route index element={<Login />} />
               <Route path="event" element={<Event />} />
               <Route path="eventDetail" element={<EventDetail />} />
-              <Route index element={<CommunityPage />} />
+              <Route path="community" element={<CommunityPage />} />
               <Route path="notice" element={<Notice />} />
               <Route path="create" element={<Create />} />
               <Route path="result" element={<Result />} />

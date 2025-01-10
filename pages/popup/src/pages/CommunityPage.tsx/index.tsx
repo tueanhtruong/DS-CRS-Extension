@@ -10,12 +10,12 @@ function CommunityPage() {
         <h2 className="px-0 py-1 text-xs mx-0 my-0">What is your purpose</h2>
         <button
           className="text-neutral-700 bg-white px-4 py-2 text-sm w-full rounded"
-          onClick={() => navigate('notice')}>
+          onClick={() => navigate('../notice')}>
           Notice of a focal point
         </button>
         <button
           className="text-neutral-700 bg-white px-4 py-2 text-sm w-full rounded"
-          onClick={() => navigate('create')}>
+          onClick={() => navigate('../create')}>
           Create an event
         </button>
       </div>
