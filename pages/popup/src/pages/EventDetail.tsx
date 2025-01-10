@@ -13,7 +13,7 @@ export default function EventDetail() {
           <Button
             variant="contained"
             onClick={() => {
-              navigate('../community');
+              navigate('../result');
             }}
             fullWidth>
             Count me in
