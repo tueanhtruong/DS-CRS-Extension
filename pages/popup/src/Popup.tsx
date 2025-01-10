@@ -1,7 +1,6 @@
 import '@src/Popup.css';
 import { withErrorBoundary, withSuspense } from '@extension/shared';
 import { Route, BrowserRouter, Routes } from 'react-router';
-// import { exampleThemeStorage } from '@extension/storage';
 import Event from '@src/pages/Event';
 import Login from '@src/pages/Login';
 import CommunityPage from '@src/pages/CommunityPage.tsx';
@@ -10,7 +9,6 @@ import Create from '@src/pages/CommunityPage.tsx/Create';
 import Result from '@src/pages/Result';
 import Map from '@src/pages/Map';
 import CountMeIn from '@src/pages/CountMeIn';
-// import type { ComponentPropsWithoutRef } from 'react';
 import { Header } from './components';
 import { AppProvider } from './context';
 import EventDetail from './pages/EventDetail';
@@ -20,7 +18,7 @@ const Popup = () => {
   return (
     <BrowserRouter>
       <AppProvider>
-        <div style={{ padding: '0px 8px', backgroundColor: '#FAFAFA', minHeight: '100%' }}>
+        <div style={{ padding: '4px 8px', backgroundColor: '#FAFAFA', minHeight: '100%' }}>
           <Header />
 
           <Routes>

@@ -14,6 +14,10 @@ body {
   position: relative;
   max-width: 375px;
   overflow: auto;
+
+  img {
+    user-select: none;
+  }
 }
 
 code {
@@ -36,9 +40,9 @@ code {
   width: 100%;
 
   /* White */
-  background: #FFFFFF;
+  background: #ffffff;
   /* Light Grey */
-  border: 1px solid #E9E9F2;
+  border: 1px solid #e9e9f2;
   border-radius: 4px;
 
   /* Inside auto layout */

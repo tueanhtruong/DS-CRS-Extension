@@ -7,13 +7,13 @@ export default function EventDetail() {
   const navigate = useNavigate();
   return (
     <div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 12, maxWidth: '100%' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12, maxWidth: '100%', paddingBottom: 40 }}>
         <img alt="my-event-detail" src="/popup/eventDetail.png" />
         <div style={{ position: 'fixed', bottom: 0, left: 12, right: 12, backgroundColor: 'white', paddingBlock: 12 }}>
           <Button
             variant="contained"
             onClick={() => {
-              navigate('../result');
+              navigate('../countmein');
             }}
             fullWidth>
             Count me in
