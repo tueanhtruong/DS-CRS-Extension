@@ -6,6 +6,8 @@ import React from 'react';
 import Event from '@src/pages/Event';
 import Login from '@src/pages/Login';
 import CommunityPage from '@src/pages/CommunityPage.tsx';
+import Notice from '@src/pages/CommunityPage.tsx/Notice';
+import Create from '@src/pages/CommunityPage.tsx/Create';
 // import type { ComponentPropsWithoutRef } from 'react';
 
 // const notificationOptions = {
@@ -72,7 +74,11 @@ const Popup = () => {
         <Route path="/popup/index.html">
           {/* <Route  element={<Login />} />
           <Route path="event" element={<Event />} /> */}
-          <Route index element={<CommunityPage />} />
+          <Route>
+            <Route index element={<CommunityPage />} />
+            <Route path="notice" element={<Notice />} />
+            <Route path="create" element={<Create />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
