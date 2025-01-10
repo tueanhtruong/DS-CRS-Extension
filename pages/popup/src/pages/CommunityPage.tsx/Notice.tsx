@@ -1,8 +1,11 @@
 import { Button, FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import { BootstrapInput, StyledLabel } from '@src/components/Input';
 import React from 'react';
+import { useNavigate } from 'react-router';
 
 function Notice() {
+  const navigate = useNavigate();
+
   return (
     <div className="px-3">
       <h1 className="px-0 py-1 text-lg mx-0 my-0">Notice of a focal point</h1>
@@ -76,8 +79,14 @@ function Notice() {
           </RadioGroup>
         </FormControl>
 
-        <Button color="primary" variant="contained" fullWidth>
-          Submit
+        <Button
+          color="primary"
+          variant="contained"
+          fullWidth
+          onClick={() => {
+            navigate('/popup/index.html/result');
+          }}>
+          Send
         </Button>
       </form>
     </div>
