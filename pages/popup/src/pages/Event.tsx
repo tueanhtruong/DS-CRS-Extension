@@ -9,8 +9,10 @@ export default function Event() {
     <div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12, maxWidth: '100%', position: 'relative' }}>
         <img alt="point" src="/popup/point.png" />
-        <img alt="my-event" src="/popup/myEvents.png" />
-        <Button variant="text" onClick={() => navigate('../eventDetail')} style={{ maxWidth: '100%' }}>
+        <Button variant="text" onClick={() => navigate('../create')} style={{ maxWidth: '100%' }}>
+          <img alt="my-event" src="/popup/myEvents.png" style={{ maxWidth: '100%' }} />
+        </Button>
+        <Button variant="text" onClick={() => navigate('../result')} style={{ maxWidth: '100%' }}>
           <img alt="top-event" src="/popup/topEvents.png" style={{ maxWidth: '100%' }} />
         </Button>
       </div>

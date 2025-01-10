@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router';
 function Result() {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col justify-center place-items-center" style={{ height: '100vh' }}>
+    <div className="flex flex-col justify-center place-items-center" style={{ marginBlockStart: 80 }}>
       <img src="/popup/Result.png" alt="Result Page" />
       <div className="w-72 mt-4">
         <Button variant="contained" fullWidth onClick={() => navigate('../event')}>
