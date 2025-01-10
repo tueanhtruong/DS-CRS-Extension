@@ -8,6 +8,8 @@ import CommunityPage from '@src/pages/CommunityPage.tsx';
 import Notice from '@src/pages/CommunityPage.tsx/Notice';
 import Create from '@src/pages/CommunityPage.tsx/Create';
 import Result from '@src/pages/Result';
+import Map from '@src/pages/Map';
+import CountMeIn from '@src/pages/CountMeIn';
 // import type { ComponentPropsWithoutRef } from 'react';
 import { Header } from './components';
 import { AppProvider } from './context';
@@ -31,6 +33,8 @@ const Popup = () => {
               <Route path="create" element={<Create />} />
               <Route path="result" element={<Result />} />
               <Route path="leaderboard" element={<LeaderBoard />} />
+              <Route path="map" element={<Map />} />
+              <Route path="countmein" element={<CountMeIn />} />
             </Route>
           </Routes>
         </div>

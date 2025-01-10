@@ -12,8 +12,41 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   position: relative;
+  max-width: 375px;
+  overflow: auto;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+#map-page {
+}
+
+.box {
+  /* Event Card */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 8px;
+  gap: 16px;
+
+  width: 100%;
+
+  /* White */
+  background: #FFFFFF;
+  /* Light Grey */
+  border: 1px solid #E9E9F2;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 5;
+  align-self: stretch;
+  flex-grow: 0;
+  z-index: 5;
+
+  margin-top: 12px;
 }
