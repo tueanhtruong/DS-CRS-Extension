@@ -64,7 +64,17 @@ function Notice() {
                 },
               }}
             />
-            <FormControlLabel value="planet" control={<Radio />} label="Planet" />
+            <FormControlLabel
+              value="planet"
+              control={<Radio />}
+              label="Planet"
+              slotProps={{
+                typography: {
+                  fontSize: 14,
+                  fontWeight: '400',
+                },
+              }}
+            />
             <FormControlLabel
               value="workspace"
               control={<Radio />}

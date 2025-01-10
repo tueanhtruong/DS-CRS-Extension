@@ -9,12 +9,12 @@ function CommunityPage() {
       <div className="flex flex-col gap-2">
         <h2 className="px-0 py-1 text-xs mx-0 my-0">What is your purpose</h2>
         <button
-          className="text-neutral-700 bg-white px-4 py-2 text-sm w-full rounded"
+          className="text-neutral-700 bg-white px-4 py-2 text-sm w-full rounded hover:cursor-pointer"
           onClick={() => navigate('../notice')}>
           Notice of a focal point
         </button>
         <button
-          className="text-neutral-700 bg-white px-4 py-2 text-sm w-full rounded"
+          className="text-neutral-700 bg-white px-4 py-2 text-sm w-full rounded hover:cursor-pointer"
           onClick={() => navigate('../create')}>
           Create an event
         </button>
