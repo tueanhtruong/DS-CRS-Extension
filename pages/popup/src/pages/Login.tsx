@@ -122,7 +122,7 @@ export default function Login() {
           variant="contained"
           onClick={() => {
             setUser?.({ ...(user as UserInfo), login: true });
-            navigate('event');
+            navigate('../event');
           }}>
           Login
         </Button>

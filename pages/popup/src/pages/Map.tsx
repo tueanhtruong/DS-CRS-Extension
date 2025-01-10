@@ -10,53 +10,48 @@ export default function Map() {
     <div id="map-page">
       <h3>Community Map</h3>
 
-      {
-        isDetailMap ? (
-          // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions
-          <img
-            onClick={() => setIsDetailMap(prevState => !prevState)}
-            src={'/popup/Map2.png'}
-            alt={'map'}
-            style={{ maxWidth: '100%', cursor: 'pointer' }}
-          />
-        ) : (
-          // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions
-          <img
-            onClick={() => setIsDetailMap(prevState => !prevState)}
-            src={'/popup/Map.png'}
-            alt={'map'}
-            style={{ maxWidth: '100%', cursor: 'pointer' }}
-          />
-        )
-      }
-
-      <div className='box'>
+      {isDetailMap ? (
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions
         <img
-          src={'/popup/Map3.png'}
+          onClick={() => setIsDetailMap(prevState => !prevState)}
+          src={'/popup/Map2.png'}
           alt={'map'}
-          style={{ maxWidth: '100%' }}
+          style={{ maxWidth: '100%', cursor: 'pointer' }}
         />
-
-
+      ) : (
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions
         <img
-          src={'/popup/Map4.png'}
+          onClick={() => setIsDetailMap(prevState => !prevState)}
+          src={'/popup/Map.png'}
           alt={'map'}
-          style={{ width: '90px' }}
+          style={{ maxWidth: '100%', cursor: 'pointer' }}
         />
+      )}
 
-        <img
-          src={'/popup/Map5.png'}
-          alt={'map'}
-          style={{ width: '100%' }}
-        />
+      <div className="box">
+        <img src={'/popup/Map3.png'} alt={'map'} style={{ maxWidth: '100%' }} />
 
-        <Button color="primary" variant="outlined" fullWidth>
+        <img src={'/popup/Map4.png'} alt={'map'} style={{ width: '90px' }} />
+
+        <img src={'/popup/Map5.png'} alt={'map'} style={{ width: '100%' }} />
+
+        <Button
+          color="primary"
+          variant="outlined"
+          fullWidth
+          onClick={() => {
+            navigate('/popup/index.html/eventDetail');
+          }}>
           Event Detail
         </Button>
 
-        <Button color="primary" variant="contained" fullWidth onClick={() => {
-          navigate('/popup/index.html/countmein')
-        }}>
+        <Button
+          color="primary"
+          variant="contained"
+          fullWidth
+          onClick={() => {
+            navigate('/popup/index.html/countmein');
+          }}>
           Count me in
         </Button>
       </div>
