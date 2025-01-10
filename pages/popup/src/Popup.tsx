@@ -5,6 +5,7 @@ import { Route, BrowserRouter, Routes } from 'react-router';
 import React from 'react';
 import Event from '@src/pages/Event';
 import Login from '@src/pages/Login';
+import CommunityPage from '@src/pages/CommunityPage.tsx';
 // import type { ComponentPropsWithoutRef } from 'react';
 
 // const notificationOptions = {
@@ -69,8 +70,9 @@ const Popup = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/popup/index.html">
-          <Route index element={<Login />} />
-          <Route path="event" element={<Event />} />
+          {/* <Route  element={<Login />} />
+          <Route path="event" element={<Event />} /> */}
+          <Route index element={<CommunityPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
