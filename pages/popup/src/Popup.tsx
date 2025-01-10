@@ -12,6 +12,7 @@ import Result from '@src/pages/Result';
 import { Header } from './components';
 import { AppProvider } from './context';
 import EventDetail from './pages/EventDetail';
+import LeaderBoard from '@src/pages/LeaderBoard';
 
 const Popup = () => {
   return (
@@ -29,6 +30,7 @@ const Popup = () => {
               <Route path="notice" element={<Notice />} />
               <Route path="create" element={<Create />} />
               <Route path="result" element={<Result />} />
+              <Route path="leaderboard" element={<LeaderBoard />} />
             </Route>
           </Routes>
         </div>

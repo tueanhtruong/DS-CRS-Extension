@@ -1,6 +1,7 @@
 import { Button, Stack } from '@mui/material';
 import { useUncontrolled } from '@src/hook/useUncontrolled';
 import * as React from 'react';
+import { useNavigate } from 'react-router';
 
 export type TabValue = 'home' | 'map' | 'leaderboard';
 
@@ -9,8 +10,12 @@ export type SegmentedControlsProps = {
 };
 
 export function SegmentedControls({ onChange }: SegmentedControlsProps) {
+  const navigate = useNavigate();
   const [currentTab, setCurrentTab] = useUncontrolled<TabValue>({ defaultValue: 'home', onChange });
   const handleChanged = (tab: TabValue) => () => {
+    if (tab === 'leaderboard') {
+      navigate('/popup/index.html/leaderboard');
+    }
     setCurrentTab(tab);
   };
   return (
