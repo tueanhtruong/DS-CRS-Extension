@@ -7,11 +7,12 @@ export type TabValue = 'home' | 'map' | 'leaderboard';
 
 export type SegmentedControlsProps = {
   onChange?: (tab: TabValue) => void;
+  value?: TabValue;
 };
 
-export function SegmentedControls({ onChange }: SegmentedControlsProps) {
+export function SegmentedControls({ onChange, value }: SegmentedControlsProps) {
   const navigate = useNavigate();
-  const [currentTab, setCurrentTab] = useUncontrolled<TabValue>({ defaultValue: 'home', onChange });
+  const [currentTab, setCurrentTab] = useUncontrolled<TabValue>({ defaultValue: 'home', onChange, value });
   const handleChanged = (tab: TabValue) => () => {
     if (tab === 'leaderboard') {
       navigate('/popup/index.html/leaderboard');

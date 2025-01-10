@@ -30,6 +30,13 @@ export const Header: React.FC<HeaderProps> = () => {
     }
   };
 
+  const currentTab = (): TabValue => {
+    const pathname = location.pathname;
+    if (pathname.includes('leaderboard')) return 'leaderboard';
+    if (pathname.includes('map')) return 'map';
+    return 'home';
+  };
+
   return (
     <Stack
       direction="row"
@@ -37,7 +44,7 @@ export const Header: React.FC<HeaderProps> = () => {
       alignItems="center"
       sx={{ padding: '12px', backgroundColor: 'white' }}>
       {user?.login ? <AvatarUser user={user} /> : <Logo />}
-      <SegmentedControls onChange={handleChangeTab} />
+      <SegmentedControls onChange={handleChangeTab} value={currentTab()} />
     </Stack>
   );
 };

@@ -22,7 +22,7 @@ export default function Event() {
         .then(response => response.json())
         .then(userInfo => {
           console.log(userInfo);
-          setUser?.(userInfo as UserInfo);
+          setUser?.({ ...userInfo, login: true } as UserInfo);
         })
         .catch(error => console.error('Error fetching user info:', error));
     });
