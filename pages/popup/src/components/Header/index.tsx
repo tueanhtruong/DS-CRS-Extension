@@ -1,14 +1,35 @@
 import { Avatar, Stack } from '@mui/material';
 import React from 'react';
 import { Logo } from '../Logo';
+import type { TabValue } from '../Segmented';
 import { SegmentedControls } from '../Segmented';
 import type { UserInfo } from '@src/context';
 import { useAppContext } from '@src/context';
+import { useNavigate, useLocation } from 'react-router';
 
 interface HeaderProps {}
 
 export const Header: React.FC<HeaderProps> = () => {
   const { user } = useAppContext();
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log('🚀 ~ location:', location);
+
+  const handleChangeTab = (tab: TabValue) => {
+    switch (tab) {
+      case 'leaderboard':
+        navigate('/popup/index.html/leaderboard');
+        break;
+      case 'map':
+        navigate('/popup/index.html/map');
+        break;
+      case 'home':
+      default:
+        navigate('/popup/index.html/event');
+        break;
+    }
+  };
+
   return (
     <Stack
       direction="row"
@@ -16,7 +37,7 @@ export const Header: React.FC<HeaderProps> = () => {
       alignItems="center"
       sx={{ padding: '12px', backgroundColor: 'white' }}>
       {user?.login ? <AvatarUser user={user} /> : <Logo />}
-      <SegmentedControls />
+      <SegmentedControls onChange={handleChangeTab} />
     </Stack>
   );
 };
